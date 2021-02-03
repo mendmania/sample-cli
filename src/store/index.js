@@ -9,20 +9,20 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     sampleData: '1323',
-    name: 'mendim',
+    name: 'emri',
     apiData: {}
   },
   mutations: {
     changeName(state, name) {
       state.name = name;
     },
-    GET_DATA(state, data){
+    getData(state, data){
       state.apiData = data;
     }
   },
   actions: {
     changeName({ commit }) {
-      commit('changeName', 'mendmania');
+      commit('changeName', 'surname');
     },
 
     async apiData({ commit }) {
@@ -31,7 +31,7 @@ export default new Vuex.Store({
         if (response.status !== 200) {
           throw new Error(`HTTP error! status: ${response.status}`);
         } else {
-          commit('GET_DATA', response.data);
+          commit('getData', response.data);
         }
       } catch (error) {
         console.log(error);

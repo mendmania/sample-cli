@@ -7,6 +7,9 @@
     <button @click="changeValue">click</button>
 
     <h1>{{componentData}}</h1>
+    <!-- <h3 v-for="data in componentData" :key="data.id">{{data.name}}</h3> -->
+
+    <router-view></router-view>
   </div>
 </template>
 
